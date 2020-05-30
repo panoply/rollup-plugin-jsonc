@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Convert .jsonc (json with comments) files to ES6 modules.",
   "author": "Nikolas Savvidis <nicos@gmx.com>",
-  "license": "MIT",
+  "license": "WTFPL",
   "main": "./package/index.cjs.js",
   "module": "package/index.es.js",
   "types": "index.d.ts",

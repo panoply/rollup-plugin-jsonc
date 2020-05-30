@@ -1,2 +1,6 @@
 test
 rollup.config.js
+pnpm-lock.yaml
+node_modules
+example
+versions
