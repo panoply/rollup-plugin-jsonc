@@ -1,2 +1,0 @@
-import{createFilter as n,dataToEsm as e}from"@rollup/pluginutils";import o from"strip-json-comments";export default function(r){void 0===r&&(r={});var t=n(r.include,r.exclude),i="indent"in r?r.indent:"\t",p=!("jsonc"in r)||r.jsonc;return{name:"rollup-plugin-jsonc",transform:function(n,s){if(!["jsonc",".json"].includes(s.slice(-5))||!t(s))return null;var c=p?o(n,{whitespace:!1}):n;return{code:e(JSON.parse(c),{preferConst:r.preferConst,compact:r.compact,namedExports:r.namedExports,indent:i}),map:{mappings:""}}}}}
-//# sourceMappingURL=index.es.js.map
