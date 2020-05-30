@@ -1,0 +1,35 @@
+{
+  "name": "rollup-plugin-jsonc",
+  "version": "0.1.0",
+  "description": "Convert .jsonc (json with comments) files to ES6 modules.",
+  "author": "Nikolas Savvidis <nicos@gmx.com>",
+  "license": "MIT",
+  "main": "./package/index.cjs.js",
+  "module": "package/index.es.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/panoply/rollup-plugin-jsonc"
+  },
+  "bugs": {
+    "url": "https://github.com/panoply/rollup-plugin-jsonc/issues"
+  },
+  "scripts": {
+    "example": "rollup -c ./example/rollup.config.js -w",
+    "dev": "rollup -c -w",
+    "build": "rollup -c --environment prod",
+    "pack": "cd versions; pnpm pack ../ && cd .."
+  },
+  "dependencies": {
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/pluginutils": "^3.0.10",
+    "strip-json-comments": "^3.1.0"
+  },
+  "devDependencies": {
+    "rollup": "^2.11.2",
+    "rollup-plugin-terser": "^6.1.0"
+  },
+  "peerDependencies": {
+    "rollup": "^2.11.2"
+  }
+}
