@@ -8,8 +8,8 @@ const external = Object.keys(pkg.dependencies);
 export default {
   input: 'index.js',
   output: [
-    { file: pkg.main, format: 'cjs', sourcemap: true },
-    { file: pkg.module, format: 'es', sourcemap: true }
+    { file: pkg.main, format: 'cjs', sourcemap: !process.env.prod },
+    { file: pkg.module, format: 'es', sourcemap: !process.env.prod  }
   ],
   plugins: [terser(),buble()],
   external
