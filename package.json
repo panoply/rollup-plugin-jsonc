@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-jsonc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Convert .jsonc (json with comments) and .json files to ES6 modules.",
   "author": "Nikolas Savvidis <nicos@gmx.com>",
   "license": "WTFPL",

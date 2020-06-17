@@ -22,17 +22,30 @@ export default function jsonc(options = {}) {
 
       if (!['jsonc', '.json'].includes(id.slice(-5)) || !filter(id)) return null
 
-      const strip = jsonc ? stripJsonComments(json, { whitespace: false }) : json
+      try {
 
-      return {
-        code: dataToEsm(JSON.parse(strip), {
-          preferConst: options.preferConst,
-          compact: options.compact,
-          namedExports: options.namedExports,
-          indent
-        }),
-        map: { mappings: '' }
+        const strip = jsonc ? stripJsonComments(json, { whitespace: false }) : json
+
+        return {
+          code: dataToEsm(JSON.parse(strip), {
+            preferConst: options.preferConst,
+            compact: options.compact,
+            namedExports: options.namedExports,
+            indent
+          }),
+          map: { mappings: '' }
+        };
+
+      } catch (err) {
+
+        const message = 'Could not parse JSON file';
+        const position = parseInt(/[\d]/.exec(err.message)[0], 10);
+
+        this.warn({ message, id, position });
+
+        return null;
       }
+
     }
   }
 }
